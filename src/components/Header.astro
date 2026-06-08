@@ -1,0 +1,33 @@
+---
+export { default as Header } from "../components/Header.astro";
+
+
+const secciones = [
+  { name: "About", href: "/about" },
+  { name: "Projects", href: "/proyects" },
+  { name: "Contact", href: "/contact" },
+];
+
+---
+
+<div
+  class="flex flex-row w-full bg-(--color-grisclaro) justify-between shadow items-center"
+>
+  <a href="/index">
+  <div class="h-10 w-10 bg-(--color-accent)">
+    <img />
+  </div>
+  </a>
+
+<nav>
+  <ul class="flex flex-row pt-0.5 pb-0.5 text-white">
+
+    {secciones.map((seccion) => (
+      <li>
+        <a
+          class="text-(--color-semiblack) hover:text-(--color-hover)"
+          href={seccion.href}>{seccion.name}</a>
+      </li>
+    ))}
+  </ul>
+</nav>

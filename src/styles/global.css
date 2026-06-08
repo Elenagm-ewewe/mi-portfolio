@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+:root{
+  --color-grisclaro: #ebeef3;
+  --color-accent: #f5ca0b;
+  --color-hover: #0060f0;
+  --color-semiblack: #202530;
+  --color-grismedio: #9fa5ad;
+}
