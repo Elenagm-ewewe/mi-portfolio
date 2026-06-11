@@ -45,8 +45,8 @@ export const traducciones = {
             short: 'EN',
         },
         hero: {
-            eyebrow: 'Front-end developer',
-            title: 'Creo portfolios y productos con una estética clara, elegante y directa.',
+            eyebrow: 'Portfolio y productos digitales',
+            title: 'Elena Gutiérrez',
             description:
                 'Este index está pensado para presentar proyectos, capacidades y contacto con una estructura visual sobria, moderna y fácil de mantener.',
             primary: 'Ver proyectos',

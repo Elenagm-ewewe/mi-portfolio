@@ -10,7 +10,7 @@ const secciones = [
 
 ---
 
-<header class="sticky top-0 left-0 z-50 w-full border-b border-black/5 bg-[rgba(235,238,243,0.94)] shadow-[0_10px_30px_rgba(32,37,48,0.08)] backdrop-blur-md">
+<header class="sticky top-0 left-0 z-50 w-full border-b border-black/5 bg-[rgba(235,238,243,0.94)] shadow-lg backdrop-blur-md">
   <div class=" flex items-center justify-between px-5 py-3 sm:px-8 lg:px-10 mx-auto max-w-7xl">
     <a href="#" class="group flex items-center justify-center transition" aria-label="Ir al inicio">
       <div class="icon flex h-11 w-19 items-center justify-center transition">
@@ -163,6 +163,7 @@ const secciones = [
 
   .icon:hover svg {
     fill: var(--color-accent);
+    transition: fill 300ms ease;
   }
 
   .menu-icon__line {

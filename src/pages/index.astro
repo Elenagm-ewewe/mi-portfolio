@@ -20,6 +20,7 @@ const frontend = [
 const backend = [{ name: 'Spring Boot', icon:'devicon:spring' },
 {name: '.NET', icon:'logos:dotnet' },
   { name: 'MySQL', icon:'devicon:mysql' },
+  { name: 'SQL Server', icon:'devicon:microsoftsqlserver' },
   {name: 'MongoDB', icon:'devicon:mongodb' },
 ];
 
@@ -69,11 +70,11 @@ const herramientas = [
 
 			</div>
 
-			<div class="gap-40 lg:flex-row">
+			<div class="flex flex-col gap-15">
 				
 				<div class="mt-6 flex flex-col gap-4 w-full justify-center items-center">
 				<p class="text-lg font-semibold text-[--color-semiblack] uppercase">Frontend</p>
-				<div class="flex flex-wrap gap-3">
+				<div class="grid grid-cols-3 justify-center gap-8 lg:flex flex-row flex-wrap">
 					{frontend.map((tech) => (
 						<span class="flex flex-col items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-[--color-semiblack] hover:scale-110 transition-transform">
 							<Icon name={tech.icon} width="35" height="35" class="drop-shadow"/>
@@ -85,7 +86,7 @@ const herramientas = [
 
 				<div class="mt-6 flex flex-col gap-4 w-full justify-center items-center">
 					<p class="text-lg font-semibold text-[--color-semiblack] uppercase">Backend</p>
-				<div class="flex flex-row flex-wrap gap-8">
+				<div class="grid grid-cols-3 justify-center gap-8 lg:flex flex-row flex-wrap">
 					{backend.map((tech) => (
 						<span class="flex flex-col items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-[--color-semiblack] hover:scale-110 transition-transform">
 							<Icon name={tech.icon} width="35" height="35" class="drop-shadow"/>
@@ -99,7 +100,7 @@ const herramientas = [
 
 			<div class="mt-6 flex flex-col gap-4 w-full justify-center items-center">
 				<p class="text-lg font-semibold text-[--color-semiblack] uppercase">Herramientas</p>
-				<div class="flex flex-row gap-8">
+				<div class="grid grid-cols-3 justify-center gap-8 lg:flex flex-row flex-wrap">
 				{herramientas.map((tool) => (
 					<span class="flex flex-col items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-[--color-semiblack] hover:scale-110 transition-transform">
 					<Icon name={tool.icon} width="35" height="35" class="drop-shadow"/>
@@ -113,7 +114,7 @@ const herramientas = [
 
 <div class="mt-6 flex flex-col gap-4 w-full justify-center items-center">
 	<p class="text-lg font-semibold text-[--color-semiblack] uppercase">Herramientas gráficas</p>
-	<div class="flex flex-row gap-8">
+	<div class="grid grid-cols-3 justify-center gap-8 lg:flex flex-row flex-wrap">
     {graficas.map((tool) => (
         <span class="flex flex-col items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-[--color-semiblack] hover:scale-110 transition-transform">
             <Icon name={tool.icon} width="35" height="35" class="drop-shadow"/>
@@ -164,7 +165,7 @@ const herramientas = [
 
 			
 	
-	<div id="contacto-background" class="bg-[radial-gradient(circle_at_top,rgba(245,202,11,0.22),transparent_38%),linear-gradient(180deg,#171b23_0%,#0d1016_100%)] py-19">
+	<div id="contacto-background" class=" bg-[radial-gradient(circle_at_top,rgba(245,202,11,0.22),transparent_38%),linear-gradient(180deg,#171b23_0%,#0d1016_100%)] py-19">
 		<CursorFollower />
 			<section class="flex justify-center align-middle mx-auto max-w-7xl px-6 pb-10 sm:px-8 lg:px-19" id="contacto">
 			
