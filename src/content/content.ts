@@ -23,6 +23,16 @@ export const contacto = [
     },
 ];
 
+export const graficas = [
+	{ name: 'Photoshop', icon: 'logos:adobe-photoshop' },
+	{ name: 'Illustrator', icon: 'logos:adobe-illustrator' },
+	{ name: 'After Effects', icon: 'logos:adobe-after-effects' },
+	{ name: 'Premiere', icon: 'logos:adobe-premiere' },
+    { name: 'Indesign', icon: 'logos:adobe-indesign' },
+    { name: 'Inkscape', icon: 'devicon:inkscape' },
+    { name: 'Lightroom', icon: 'logos:adobe-lightroom' }
+]
+
 export const traducciones = {
     es: {
         nav: {

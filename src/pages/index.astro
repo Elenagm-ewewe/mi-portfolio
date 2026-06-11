@@ -1,40 +1,45 @@
 ---
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
-import { contacto, traducciones } from '../content/content.ts';
+import { contacto, traducciones, graficas } from '../content/content.ts';
 import { Icon } from 'astro-icon/components';
-
+import CursorFollower from '../components/CursorFollower.astro';
+import Footer from '../components/Footer.astro';
 
 
 const copy = traducciones.es;
 
 const frontend = [
-  { name: 'Figma', color: 'purple' },
-  { name: 'Angular', color: 'purple' },
-  { name: 'Astro', color: 'teal' },
-  { name: 'Vue', color: 'coral' },
-  { name: 'Tailwind CSS', color: 'purple' },
+  { name: 'Figma', icon: 'devicon:figma' },
+  { name: 'Angular', icon: 'devicon:angular' },
+  { name: 'Astro', icon: 'devicon:astro' },
+  { name: 'Vue', icon: 'logos:vue' },
+  { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon'},
 ];
 
-const backend = [{ name: 'Spring Boot', color: 'green' },
-{name: '.NET', color: 'blue' },
-  { name: 'MySQL', color: 'blue' },
-  {name: 'MongoDB', color: 'green' },
+const backend = [{ name: 'Spring Boot', icon:'devicon:spring' },
+{name: '.NET', icon:'logos:dotnet' },
+  { name: 'MySQL', icon:'devicon:mysql' },
+  {name: 'MongoDB', icon:'devicon:mongodb' },
 ];
 
 const herramientas = [
-	{ name: 'Git', color: 'orange' },
-    { name: 'Figma', color: 'blue' },
-    { name: 'VS Code', color: 'red' },
-	{ name: 'Postman', color: 'teal' },
+	{ name: 'Git', icon:'devicon:git' },
+    { name: 'Figma', icon:'devicon:figma' },
+    { name: 'VS Code', icon:'logos:visual-studio-code' },
+	{ name: "Visual Studio", icon:'devicon:visualstudio' },
+	{ name: 'Postman', icon:'devicon:postman' },
 ]
+
+
 
 ---
 
 <Layout>
-	<Header />
 
-	<main class="space-y-10 pb-10">
+
+	<main class="">
+			<Header />
 		<section class="mx-auto grid items-center gap-8 px-6 py-10 sm:px-8 lg:max-w-7xl lg:grid-cols-[1.3fr_0.9fr] lg:gap-12 lg:px-10" id="top">
 			<div class="max-w-3xl space-y-5">
 				<p class="text-sm font-semibold uppercase tracking-[0.35em] text-[--color-hover]" data-i18n="hero.eyebrow">{copy.hero.eyebrow}</p>
@@ -53,44 +58,78 @@ const herramientas = [
 
 		<!--SOBRE MI -->
 
-		<section class="p-6 mx-auto w-7xl px-6 pb-10 sm:px-8 lg:px-10 bg-gray-200" id="sobre-mi">
-			<div class="mb-6 flex items-end justify-between gap-4">
+		<section class="p-6 mx-auto px-6 pb-10 sm:px-8 lg:px-10 lg:max-w-7xl" id="sobre-mi">
+			<div class="mb-6 items-end justify-between gap-4">
 				<div>
 					<p class="text-sm font-semibold uppercase tracking-[0.35em] text-[--color-hover]" data-i18n="about.eyebrow">{copy.about.eyebrow}</p>
 					<h2 class="mt-2 text-3xl font-semibold text-[--color-semiblack]" data-i18n="about.title">{copy.about.title}</h2>
 				</div>
+
+				<p class="text-sm leading-7 text-[--color-semiblack]/80" data-i18n="about.description">{copy.about.description}</p>
+
 			</div>
 
-			<div class="flex flex-col gap-6 lg:flex-row">
-				<p class="text-sm leading-7 text-[--color-semiblack]/80" data-i18n="about.description">{copy.about.description}</p>
+			<div class="gap-40 lg:flex-row">
+				
+				<div class="mt-6 flex flex-col gap-4 w-full justify-center items-center">
+				<p class="text-lg font-semibold text-[--color-semiblack] uppercase">Herramientas de diseño</p>
 				<div class="flex flex-wrap gap-3">
 					{frontend.map((tech) => (
-						<span class={`rounded-full border border-[rgba(32,37,48,0.1)] bg-[--color-grisclaro] px-3 py-1 text-xs font-medium text-[--color-semiblack]`}>{tech.name}</span>
+						<span class="flex flex-col items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-[--color-semiblack]">
+							<Icon name={tech.icon} width="35" height="35" class=""/>
+							{tech.name}
+							</span>
 					))}
 				</div>
+				</div>
 
-				<div class="flex flex-wrap gap-3">
+				<div class="mt-6 flex flex-col gap-4 w-full justify-center items-center">
+					<p class="text-lg font-semibold text-[--color-semiblack] uppercase">Backend</p>
+				<div class="flex flex-row flex-wrap gap-8">
 					{backend.map((tech) => (
-						<span class={`rounded-full border border-[rgba(32,37,48,0.1)] bg-[--color-grisclaro] px-3 py-1 text-xs font-medium text-[--color-semiblack]`}>{tech.name}</span>
+						<span class="flex flex-col items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-[--color-semiblack] hover:scale-110 transition-transform">
+							<Icon name={tech.icon} width="35" height="35" class=""/>
+
+							{tech.name}
+							</span>
 					))}
+					</div>
 
 			</div>
 
-			<div class="mt-6 flex flex-wrap gap-3">
+			<div class="mt-6 flex flex-col gap-4 w-full justify-center items-center">
+				<p class="text-lg font-semibold text-[--color-semiblack] uppercase">Herramientas</p>
+				<div class="flex flex-row gap-8">
 				{herramientas.map((tool) => (
-					<span class={`rounded-full border border-[rgba(32,37,48,0.1)] bg-[--color-grisclaro] px-3 py-1 text-xs font-medium text-[--color-semiblack]`}>{tool.name}</span>
+					<span class="flex flex-col items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-[--color-semiblack] hover:scale-110 transition-transform">
+					<Icon name={tool.icon} width="35" height="35" class=""/>
+					{tool.name}
+					</span>
 				))}
+				</div>
 
 
 			</div>
 
-			</div>	
+<div class="mt-6 flex flex-col gap-4 w-full justify-center items-center">
+	<p class="text-lg font-semibold text-[--color-semiblack] uppercase">Herramientas gráficas</p>
+	<div class="flex flex-row gap-8">
+    {graficas.map((tool) => (
+        <span class="flex flex-col items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-[--color-semiblack] hover:scale-110 transition-transform">
+            <Icon name={tool.icon} width="35" height="35" class=""/>
+            {tool.name}
+        </span>
+    ))}
+	</div>
+</div>
+
+			</div>
 
 
 		</section>
 
 
-		<section class="mx-auto w-full max-w-7xl px-6 pb-10 sm:px-8 lg:px-10" id="proyectos">
+		<!-- <section class="mx-auto w-full max-w-7xl px-6 pb-10 sm:px-8 lg:px-10" id="proyectos">
 			<div class="mb-6 flex items-end justify-between gap-4">
 				<div>
 					<p class="text-sm font-semibold uppercase tracking-[0.35em] text-[--color-hover]" data-i18n="projects.eyebrow">{copy.projects.eyebrow}</p>
@@ -116,12 +155,23 @@ const herramientas = [
 					</article>
 				))}
 			</div>
-		</section>
+		</section> -->
 
-		<div class="bg-[radial-gradient(circle_at_top,rgba(245,202,11,0.22),transparent_38%),linear-gradient(180deg,#171b23_0%,#0d1016_100%)] py-19">
-		<section class="flex justify-center align-middle mx-auto max-w-7xl px-6 pb-10 sm:px-8 lg:px-19" id="contacto">
+
+
+
+	<div class="bg-linear-to-t from-[#171b23] via-(--color-semiblack)/50 to-(--color-semiblack)/0 h-[400px] w-full"></div>
+
+			
+	
+	<div id="contacto-background" class="bg-[radial-gradient(circle_at_top,rgba(245,202,11,0.22),transparent_38%),linear-gradient(180deg,#171b23_0%,#0d1016_100%)] py-19">
+		<CursorFollower />
+			<section class="flex justify-center align-middle mx-auto max-w-7xl px-6 pb-10 sm:px-8 lg:px-19" id="contacto">
+			
 			<div class="relative rounded-4xl w-full border border-[rgba(245,202,11,0.18)] bg-[linear-gradient(180deg,rgba(22,26,34,0.94),rgba(14,17,23,0.98))] p-8 text-white shadow-[0_26px_70px_rgba(0,0,0,0.32)] backdrop-blur">
-				<div class="absolute inset-0 rounded-4xl bg-[radial-gradient(circle_at_top_right,rgba(245,202,11,0.16),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.05),transparent_28%)] opacity-100"></div>
+							
+				<div id="follow" class="absolute inset-0 rounded-4xl bg-[radial-gradient(circle_at_top_right,rgba(245,202,11,0.16),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.05),transparent_28%)] opacity-100"></div>
+	
 				<div class="relative">
 					<p class="text-sm font-semibold uppercase tracking-[0.35em] text-(--color-accent) drop-shadow-[0_0_12px_rgba(245,202,11,0.35)]" data-i18n="contact.eyebrow">{copy.contact.eyebrow}</p>
 					<div class="mt-6 space-y-3">
@@ -144,5 +194,8 @@ const herramientas = [
 			</div>
 		</section>
 		</div>
+
 	</main>
+
+	<Footer />
 </Layout>

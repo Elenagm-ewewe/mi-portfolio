@@ -1,0 +1,72 @@
+---
+// Lógica del componente
+---
+
+<div class="cursor-follower" id="cursor-follower"></div>
+
+<script>
+  let cursorFollowerReady = false;
+
+  const setupCursorFollower = () => {
+    if (cursorFollowerReady) {
+      return;
+    }
+
+    const follower = document.getElementById('cursor-follower');
+    const target = document.getElementById('contacto-background');
+
+    if (!follower || !target) {
+      return;
+    }
+
+    cursorFollowerReady = true;
+
+    const hideFollower = () => {
+      follower.style.opacity = '0';
+    };
+
+    const showFollower = () => {
+      follower.style.opacity = '1';
+    };
+
+    target.addEventListener('pointerenter', showFollower);
+    target.addEventListener('pointerleave', hideFollower);
+    target.addEventListener(
+      'mousemove',
+      (e) => {
+        follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        showFollower();
+      },
+      { passive: true }
+    );
+
+    hideFollower();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupCursorFollower, { once: true });
+  } else {
+    setupCursorFollower();
+  }
+
+  document.addEventListener('astro:page-load', setupCursorFollower);
+</script>
+
+<style>
+  .cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 220px;
+    filter: blur(130px);
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    pointer-events: none; /* Evita que el div interfiera con los clics de otros elementos */
+    z-index: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.18s ease, transform 0.08s ease-out;
+    will-change: transform, opacity;
+  }
+</style>
