@@ -1,3 +1,5 @@
+import type { describe } from "astro:schema";
+
 export const contacto = [
     {
         name: 'Email',
@@ -7,12 +9,12 @@ export const contacto = [
     {
         name: 'LinkedIn',
         label: 'linkedin.com/in/elenapapoula/',
-        link: 'https://www.linkedin.com/in/elenapapoula/',
+        link: 'https://www.linkedin.com/in/elena-gutierrez-morata/',
     },
     {
         name: 'GitHub',
         label: 'github.com/elenapapoula',
-        link: 'https://github.com/elenapapoula',
+        link: 'https://github.com/Elenagm-ewewe',
     },
 ];
 
@@ -49,6 +51,7 @@ export const traducciones = {
                 'Abierto a portfolios, landing pages y productos simples con buena presentación.',
         },
         about: {
+            description:"Desarrolladora frontend junior y técnica audiovisual con experiencia en Angular, Vue, Astro, .NET y edición multimedia profesional. Especializada en crear soluciones digitales y contenido visual combinando desarrollo web, diseño gráfico y producción audiovisual. ",
             eyebrow: 'Sobre mí',
             title: 'Un poco sobre mi experiencia y enfoque',
             cta: 'Hablemos',

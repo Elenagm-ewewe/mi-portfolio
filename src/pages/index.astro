@@ -4,6 +4,28 @@ import Layout from '../layouts/Layout.astro';
 import { contacto, traducciones } from '../content/content.ts';
 
 const copy = traducciones.es;
+
+const frontend = [
+  { name: 'Figma', color: 'purple' },
+  { name: 'Angular', color: 'purple' },
+  { name: 'Astro', color: 'teal' },
+  { name: 'Vue', color: 'coral' },
+  { name: 'Tailwind CSS', color: 'purple' },
+];
+
+const backend = [{ name: 'Spring Boot', color: 'green' },
+{name: '.NET', color: 'blue' },
+  { name: 'MySQL', color: 'blue' },
+  {name: 'MongoDB', color: 'green' },
+];
+
+const herramientas = [
+	{ name: 'Git', color: 'orange' },
+    { name: 'Figma', color: 'blue' },
+    { name: 'VS Code', color: 'red' },
+	{ name: 'Postman', color: 'teal' },
+]
+
 ---
 
 <Layout>
@@ -18,36 +40,52 @@ const copy = traducciones.es;
 			</div>
 
 			<div class="flex flex-col gap-4 sm:flex-row">
-				<a href="#proyectos" class="inline-flex items-center justify-center rounded-2xl bg-[var(--color-semiblack)] px-6 py-4 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(32,37,48,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--color-hover)]" data-i18n="hero.primary">{copy.hero.primary}</a>
-				<a href="#contacto" class="inline-flex items-center justify-center rounded-2xl border border-[rgba(32,37,48,0.12)] bg-white/75 px-6 py-4 text-sm font-semibold text-[--color-semiblack] shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-[var(--color-hover)] hover:text-[--color-hover]" data-i18n="hero.secondary">{copy.hero.secondary}</a>
+				<a href="#proyectos" class="inline-flex items-center justify-center rounded-2xl bg-(--color-semiblack) px-6 py-4 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(32,37,48,0.18)] transition hover:-translate-y-0.5 hover:bg-(--color-hover)" data-i18n="hero.primary">{copy.hero.primary}</a>
+				<a href="#contacto" class="inline-flex items-center justify-center rounded-2xl border border-[rgba(32,37,48,0.12)] bg-white/75 px-6 py-4 text-sm font-semibold text-[--color-semiblack] shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-(--color-hover) hover:text-[--color-hover]" data-i18n="hero.secondary">{copy.hero.secondary}</a>
 			</div>
 
 		</section>
 
-		<section class="mx-auto w-full max-w-7xl px-6 py-10 sm:px-8 lg:px-10" id="about">
+
+
+		<!--SOBRE MI -->
+
+		<section class="p-6 mx-auto w-7xl px-6 pb-10 sm:px-8 lg:px-10 bg-gray-200" id="sobre-mi">
 			<div class="mb-6 flex items-end justify-between gap-4">
 				<div>
 					<p class="text-sm font-semibold uppercase tracking-[0.35em] text-[--color-hover]" data-i18n="about.eyebrow">{copy.about.eyebrow}</p>
 					<h2 class="mt-2 text-3xl font-semibold text-[--color-semiblack]" data-i18n="about.title">{copy.about.title}</h2>
 				</div>
-				<a href="#contacto" class="hidden text-sm font-semibold text-[--color-hover] transition hover:text-[--color-semiblack] sm:inline-flex" data-i18n="about.cta">{copy.about.cta}</a>
 			</div>
 
-			<div class="grid gap-5 md:grid-cols-2">
-				<div>
-					<p class="text-sm leading-7 text-[--color-semiblack]/75" data-i18n="about.paragraphs.0">{copy.about.paragraphs[0]}</p>
-					<p class="mt-4 text-sm leading-7 text-[--color-semiblack]/75" data-i18n="about.paragraphs.1">{copy.about.paragraphs[1]}</p>
+			<div class="flex flex-col gap-6 lg:flex-row">
+				<p class="text-sm leading-7 text-[--color-semiblack]/80" data-i18n="about.description">{copy.about.description}</p>
+				<div class="flex flex-wrap gap-3">
+					{frontend.map((tech) => (
+						<span class={`rounded-full border border-[rgba(32,37,48,0.1)] bg-[--color-grisclaro] px-3 py-1 text-xs font-medium text-[--color-semiblack]`}>{tech.name}</span>
+					))}
 				</div>
-				<div class="rounded-[1.75rem] border border-white/80 bg-white/80 p-6 shadow-[0_18px_40px_rgba(32,37,48,0.08)] backdrop-blur transition hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(32,37,48,0.12)]">
-					<h3 class="text-xl font-semibold text-[--color-semiblack]" data-i18n="about.servicesTitle">{copy.about.servicesTitle}</h3>
-					<ul class="mt-4 list-inside list-disc space-y-3 text-sm leading-7 text-[--color-semiblack]/75">
-						{copy.about.services.map((service, index) => (
-							<li data-i18n={`about.services.${index}`}>{service}</li>
-						))}
-					</ul>
-				</div>
+
+				<div class="flex flex-wrap gap-3">
+					{backend.map((tech) => (
+						<span class={`rounded-full border border-[rgba(32,37,48,0.1)] bg-[--color-grisclaro] px-3 py-1 text-xs font-medium text-[--color-semiblack]`}>{tech.name}</span>
+					))}
+
 			</div>
+
+			<div class="mt-6 flex flex-wrap gap-3">
+				{herramientas.map((tool) => (
+					<span class={`rounded-full border border-[rgba(32,37,48,0.1)] bg-[--color-grisclaro] px-3 py-1 text-xs font-medium text-[--color-semiblack]`}>{tool.name}</span>
+				))}
+
+
+			</div>
+
+			</div>	
+
+
 		</section>
+
 
 		<section class="mx-auto w-full max-w-7xl px-6 pb-10 sm:px-8 lg:px-10" id="proyectos">
 			<div class="mb-6 flex items-end justify-between gap-4">
@@ -77,21 +115,26 @@ const copy = traducciones.es;
 			</div>
 		</section>
 
-		<section class="mx-auto max-w-7xl px-6 pb-10 sm:px-8 lg:px-10" id="contacto">
-			<div class="rounded-[2rem] bg-(--color-accent) p-8 text-white">
-				<p class="text-sm font-semibold uppercase tracking-[0.35em] text-white/55" data-i18n="contact.eyebrow">{copy.contact.eyebrow}</p>
-				<div class="mt-6 space-y-3">
-					{contacto.map((c) => (
-						<a href={c.link} class="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm text-white no-underline transition hover:bg-white/10" rel="noreferrer" target="_blank">
-							<div>
-								<p class="text-xs uppercase tracking-[0.32em] text-white/50">{c.name}</p>
-								<p class="mt-1 font-medium">{c.label}</p>
-							</div>
-							<span class="text-white/60">↗</span>
-						</a>
-					))}
+		<div class="bg-[radial-gradient(circle_at_top,rgba(245,202,11,0.22),transparent_38%),linear-gradient(180deg,#171b23_0%,#0d1016_100%)] py-10">
+		<section class="flex justify-center align-middle mx-auto max-w-7xl px-6 pb-10 sm:px-8 lg:px-10" id="contacto">
+			<div class="relative rounded-4xl w-full border border-[rgba(245,202,11,0.18)] bg-[linear-gradient(180deg,rgba(22,26,34,0.94),rgba(14,17,23,0.98))] p-8 text-white shadow-[0_26px_70px_rgba(0,0,0,0.32)] backdrop-blur">
+				<div class="absolute inset-0 rounded-4xl bg-[radial-gradient(circle_at_top_right,rgba(245,202,11,0.16),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.05),transparent_28%)] opacity-100"></div>
+				<div class="relative">
+					<p class="text-sm font-semibold uppercase tracking-[0.35em] text-(--color-accent) drop-shadow-[0_0_12px_rgba(245,202,11,0.35)]" data-i18n="contact.eyebrow">{copy.contact.eyebrow}</p>
+					<div class="mt-6 space-y-3">
+						{contacto.map((c) => (
+							<a href={c.link} class="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm text-(--color-accent) no-underline transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(245,202,11)] hover:bg-[linear-gradient(90deg,rgba(245,202,11,0.14),rgba(255,255,255,0.06))] hover:shadow-[0_18px_36px_rgba(245,202,11,0.12)]" rel="noreferrer" target="_blank">
+								<div>
+									<p class="text-xs uppercase tracking-[0.32em] text-white/45">{c.name}</p>
+									<p class="mt-1 font-medium text-white/92 transition group-hover:text-white">{c.label}</p>
+								</div>
+								<span class="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(245,202,11,0.28)] bg-[rgba(245,202,11,0.12)] text-[--color-accent] transition group-hover:border-[rgba(245,202,11)] group-hover:bg-(--color-accent) group-hover:text-[#11151d]">↗</span>
+							</a>
+						))}
+					</div>
 				</div>
 			</div>
 		</section>
+		</div>
 	</main>
 </Layout>
