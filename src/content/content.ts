@@ -1,20 +1,25 @@
 import type { describe } from "astro:schema";
+import { Icon } from 'astro-icon/components';
+
 
 export const contacto = [
     {
         name: 'Email',
         label: 'elenapapoula@gmail.com',
         link: 'mailto:elenapapoula@gmail.com',
+        icon: 'tabler:mail',
     },
     {
         name: 'LinkedIn',
         label: 'linkedin.com/in/elenapapoula/',
         link: 'https://www.linkedin.com/in/elena-gutierrez-morata/',
+        icon: 'tabler:brand-linkedin',
     },
     {
         name: 'GitHub',
         label: 'github.com/elenapapoula',
         link: 'https://github.com/Elenagm-ewewe',
+        icon: 'tabler:brand-github',
     },
 ];
 

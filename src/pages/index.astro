@@ -2,6 +2,9 @@
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import { contacto, traducciones } from '../content/content.ts';
+import { Icon } from 'astro-icon/components';
+
+
 
 const copy = traducciones.es;
 
@@ -115,20 +118,25 @@ const herramientas = [
 			</div>
 		</section>
 
-		<div class="bg-[radial-gradient(circle_at_top,rgba(245,202,11,0.22),transparent_38%),linear-gradient(180deg,#171b23_0%,#0d1016_100%)] py-10">
-		<section class="flex justify-center align-middle mx-auto max-w-7xl px-6 pb-10 sm:px-8 lg:px-10" id="contacto">
+		<div class="bg-[radial-gradient(circle_at_top,rgba(245,202,11,0.22),transparent_38%),linear-gradient(180deg,#171b23_0%,#0d1016_100%)] py-19">
+		<section class="flex justify-center align-middle mx-auto max-w-7xl px-6 pb-10 sm:px-8 lg:px-19" id="contacto">
 			<div class="relative rounded-4xl w-full border border-[rgba(245,202,11,0.18)] bg-[linear-gradient(180deg,rgba(22,26,34,0.94),rgba(14,17,23,0.98))] p-8 text-white shadow-[0_26px_70px_rgba(0,0,0,0.32)] backdrop-blur">
 				<div class="absolute inset-0 rounded-4xl bg-[radial-gradient(circle_at_top_right,rgba(245,202,11,0.16),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.05),transparent_28%)] opacity-100"></div>
 				<div class="relative">
 					<p class="text-sm font-semibold uppercase tracking-[0.35em] text-(--color-accent) drop-shadow-[0_0_12px_rgba(245,202,11,0.35)]" data-i18n="contact.eyebrow">{copy.contact.eyebrow}</p>
 					<div class="mt-6 space-y-3">
 						{contacto.map((c) => (
-							<a href={c.link} class="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm text-(--color-accent) no-underline transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(245,202,11)] hover:bg-[linear-gradient(90deg,rgba(245,202,11,0.14),rgba(255,255,255,0.06))] hover:shadow-[0_18px_36px_rgba(245,202,11,0.12)]" rel="noreferrer" target="_blank">
-								<div>
+							<a href={c.link} class="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm text-(--color-accent) no-underline transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(245,202,11)] hover:bg-[linear-gradient(90deg,rgba(245,202,11,0.14),rgba(255,255,255,0.06))] hover:shadow-[0_18px_36px_rgba(245,202,11,0.12)] hover:animate-pulse" rel="noreferrer" target="_blank">
+								
+								<Icon name={c.icon} width="32" height="32" stroke-width={0.5} class="contact-icon mr-4 text-(--color-accent)" />
+								
+								<div class="w-full">
 									<p class="text-xs uppercase tracking-[0.32em] text-white/45">{c.name}</p>
 									<p class="mt-1 font-medium text-white/92 transition group-hover:text-white">{c.label}</p>
 								</div>
+
 								<span class="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(245,202,11,0.28)] bg-[rgba(245,202,11,0.12)] text-[--color-accent] transition group-hover:border-[rgba(245,202,11)] group-hover:bg-(--color-accent) group-hover:text-[#11151d]">↗</span>
+
 							</a>
 						))}
 					</div>
