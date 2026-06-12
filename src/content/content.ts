@@ -1,4 +1,4 @@
-import type { describe } from "astro:schema";
+
 import { Icon } from 'astro-icon/components';
 
 
@@ -24,12 +24,15 @@ export const contacto = [
 ];
 
 export const formacion = [
-    { name: 'Grado en Comunicación Audiovisual',
-        institution: 'Universidad de Málaga'},
-    { name: 'Técnico superior en Desarrollo de Aplicaciones Web',
-        institution: 'IES Jándula'},
-    { name: 'Curso de Especialización en Soporte IT y Ciberseguridad 24X7',
-        institution: 'Escuela de Organización Industrial' }
+    { titulo: 'Grado en Comunicación Audiovisual',
+        instituto: 'Universidad de Málaga',
+        periodo: '2016 - 2021' },
+    { titulo: 'Técnico superior en Desarrollo de Aplicaciones Web',
+        instituto: 'IES Jándula',
+        periodo: '2024 - 2026' },
+    { titulo: 'Curso de Especialización en Soporte IT y Ciberseguridad 24X7',
+        instituto: 'Escuela de Organización Industrial',
+        periodo: '2026' }
 ]
 
 export const graficas = [
