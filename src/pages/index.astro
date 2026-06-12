@@ -154,34 +154,75 @@ const herramientas = [
 
 
 	<!--Videos -->
-<section class="bg-amber-300 p-4 md:p-8">
+<section class="bg-linear-to-b from-(--color-accent) to-(--color-hover) px-4 lg:pt-60 pt-20 pb-12 ">
 
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" id="videos">
+  <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6" id="videos">
 
-        <div class="rounded-lg shadow-md bg-black aspect-video group">
-            <video 
-                muted 
-                loop
-				autoplay
-                preload="none"
-                class="rounded-lg w-full h-full object-cover hover-video pointer-events-none">
-                <source src="./videos/webvid1.mp4" type="video/mp4">
-            </video>
-        </div>
+<div class="rounded-lg col-span-2 max-h-[500px] lg:col-span-3 shadow-md bg-black group transition duration-300">
+    <video 
+        muted 
+        loop 
+        autoplay 
+        playsinline
+        preload="auto"
+        class="rounded-lg w-full h-full object-cover pointer-events-none speed-125">
+        <source src="./videos/drone.mp4" type="video/mp4">
+    </video>
+</div>
 
-		<div class="rounded-lg shadow-md bg-black aspect-video group">
-            <video 
-                muted 
-                loop
-				autoplay
-                preload="none"
-                class="rounded-lg w-full h-full object-cover hover-video pointer-events-none">
-                <source src="./videos/webvid2.mp4" type="video/mp4">
-            </video>
-        </div>
+<div class="rounded-lg shadow-md bg-black aspect-video group lg:blur lg:hover:blur-none transition duration-300">
+    <video 
+        muted 
+        loop 
+        autoplay 
+        playsinline
+        preload="auto"
+        class="rounded-lg w-full h-full object-cover pointer-events-none">
+        <source src="./videos/webvid1.mp4" type="video/mp4">
+    </video>
+</div>
+<div class="rounded-lg shadow-md bg-black aspect-video group lg:blur lg:hover:blur-none transition duration-300">
+    <video 
+        muted 
+        loop 
+        autoplay 
+        playsinline
+        preload="auto"
+        class="rounded-lg w-full h-full object-cover pointer-events-none">
+        <source src="./videos/webvid2.mp4" type="video/mp4">
+    </video>
+</div>
+
+<div class="rounded-lg shadow-md bg-black aspect-video group lg:blur lg:hover:blur-none transition duration-300">
+    <video 
+        muted 
+        loop 
+        autoplay 
+        playsinline
+        preload="auto"
+        class="rounded-lg w-full h-full object-cover pointer-events-none">
+        <source src="./videos/webvid3.mp4" type="video/mp4">
+    </video>
+</div>
+
+<div class="lg:hidden rounded-lg shadow-md bg-black aspect-video group lg:blur lg:hover:blur-none transition duration-300">
+    <video 
+        muted 
+        loop 
+        autoplay 
+        playsinline
+        preload="auto"
+        class="rounded-lg w-full h-full object-cover pointer-events-none">
+        <source src="./videos/webvid4.mp4" type="video/mp4">
+    </video>
+</div>
 
     </div>
         
+<p class = " lg:text-center mt-10 text-lg font-extralight text-white uppercase">
+          Grabación de videos y edición de contenido multimedia para diferentes fines
+        </p>
+
 </section>
 
 <!--SOBRE MI -->
@@ -339,7 +380,7 @@ const herramientas = [
 		</section> -->
 
 <div
-  class="bg-linear-to-t from-[#171b23] via-(--color-semiblack)/50 to-(--color-semiblack)/0 h-[400px] w-full"
+  class="bg-(--color-accent) h-[400px] w-full"
 >
 </div>
 

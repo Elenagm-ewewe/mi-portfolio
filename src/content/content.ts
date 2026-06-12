@@ -23,6 +23,15 @@ export const contacto = [
     },
 ];
 
+export const formacion = [
+    { name: 'Grado en Comunicación Audiovisual',
+        institution: 'Universidad de Málaga'},
+    { name: 'Técnico superior en Desarrollo de Aplicaciones Web',
+        institution: 'IES Jándula'},
+    { name: 'Curso de Especialización en Soporte IT y Ciberseguridad 24X7',
+        institution: 'Escuela de Organización Industrial' }
+]
+
 export const graficas = [
 	{ name: 'Photoshop', icon: 'logos:adobe-photoshop' },
 	{ name: 'Illustrator', icon: 'logos:adobe-illustrator' },
