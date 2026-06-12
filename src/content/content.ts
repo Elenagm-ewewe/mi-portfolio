@@ -7,19 +7,19 @@ export const contacto = [
         name: 'Email',
         label: 'elenapapoula@gmail.com',
         link: 'mailto:elenapapoula@gmail.com',
-        icon: 'tabler:mail',
+        icon: 'mdi:email-outline',
     },
     {
         name: 'LinkedIn',
         label: 'linkedin.com/in/elenapapoula/',
         link: 'https://www.linkedin.com/in/elena-gutierrez-morata/',
-        icon: 'tabler:brand-linkedin',
+        icon: 'mdi:linkedin',
     },
     {
         name: 'GitHub',
         label: 'github.com/elenapapoula',
         link: 'https://github.com/Elenagm-ewewe',
-        icon: 'tabler:brand-github',
+        icon: 'mdi:github',
     },
 ];
 
@@ -45,10 +45,11 @@ export const traducciones = {
             short: 'EN',
         },
         hero: {
-            eyebrow: 'Portfolio y productos digitales',
-            title: 'Elena Gutiérrez',
+            eyebrow: 'Front-end developer / Técnica audiovisual',
+            name: 'Elena',
+            surname: 'Gutiérrez Morata',
             description:
-                'Este index está pensado para presentar proyectos, capacidades y contacto con una estructura visual sobria, moderna y fácil de mantener.',
+                'Especializada en crear soluciones digitales y contenido visual combinando desarrollo web, diseño gráfico y producción audiovisual. ',
             primary: 'Ver proyectos',
             secondary: 'Contactar',
         },
@@ -74,13 +75,7 @@ export const traducciones = {
                 'Soy un desarrollador front-end con más de 4 años de experiencia creando interfaces limpias y funcionales. Me especializo en construir portfolios, landing pages y productos digitales que destacan por su estética clara, orden visual y foco en el contenido.',
                 'Mi enfoque se basa en la simplicidad, la consistencia y la usabilidad. Creo que una buena interfaz debe ser fácil de entender, agradable a la vista y orientada a la conversión. Me gusta trabajar con tecnologías modernas como Astro, Tailwind CSS y TypeScript para crear experiencias rápidas, accesibles y fáciles de mantener.',
             ],
-            servicesTitle: 'Servicios que ofrezco:',
-            services: [
-                'Diseño de interfaces simples y consistentes',
-                'Componentes reutilizables y mantenibles',
-                'Experiencias responsive con buen ritmo visual',
-                'Páginas rápidas, claras y orientadas a conversión',
-            ],
+
         },
         projects: {
             eyebrow: 'Proyectos',
