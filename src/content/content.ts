@@ -11,13 +11,13 @@ export const contacto = [
     },
     {
         name: 'LinkedIn',
-        label: 'linkedin.com/in/elenapapoula/',
+        label: 'linkedin.com/in/elena-gutierrez-morata/',
         link: 'https://www.linkedin.com/in/elena-gutierrez-morata/',
         icon: 'mdi:linkedin',
     },
     {
         name: 'GitHub',
-        label: 'github.com/elenapapoula',
+        label: 'github.com/Elenagm-ewewe',
         link: 'https://github.com/Elenagm-ewewe',
         icon: 'mdi:github',
     },
