@@ -16,9 +16,14 @@
     "@iconify-json/logos": "^1.2.11",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/tabler": "^1.2.35",
-    "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.4.4",
+    "@tailwindcss/vite": "^4.3.1",
+    "astro": "^6.4.6",
     "astro-icon": "^1.1.5",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.1",
+    "vite": "^7"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
+
