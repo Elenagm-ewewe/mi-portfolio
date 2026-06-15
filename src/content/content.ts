@@ -140,8 +140,8 @@ export const traducciones = {
                 {
                     title: 'Rediseño de la Web IES Jándula',
                     description:
-                        'Landing moderna con narrativa clara, secciones modulares y llamadas a la acción pensadas para conversión.',
-                    photo: '/images/projects/product-landing.png',
+                        'Renovación completa del sitio web del IES Jándula, con el objetivo de hacerlo más accesible, funcional y fácil de mantener ante futuras actualizaciones.',
+                    photo: '/images/iesjandula.jpg',
                     tags: ['Figma', 'Astro', 'Tailwind CSS', 'TypeScript', "Strapi"],
                 },
                 {
