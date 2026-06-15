@@ -35,15 +35,52 @@ export const formacion = [
         periodo: '2026' }
 ]
 
-export const graficas = [
-	{ name: 'Photoshop', icon: 'logos:adobe-photoshop' },
-	{ name: 'Illustrator', icon: 'logos:adobe-illustrator' },
-	{ name: 'After Effects', icon: 'logos:adobe-after-effects' },
-	{ name: 'Premiere', icon: 'logos:adobe-premiere' },
+export const alltools = [
+{name: "backend",
+tools:[
+  { name: "Spring Boot", icon: "devicon:spring" },
+  { name: ".NET", icon: "logos:dotnet" },
+  { name: "MySQL", icon: "devicon:mysql" },
+  { name: "SQL Server", icon: "devicon:microsoftsqlserver" },
+  { name: "MongoDB", icon: "devicon:mongodb" },
+  { name: "Strapi", icon: "logos:strapi-icon" },
+]
+},
+
+{name: "frontend",
+tools:[
+  { name: "Figma", icon: "devicon:figma" },
+  { name: "Angular", icon: "devicon:angular" },
+  { name: "Astro", icon: "devicon:astro" },
+  { name: "Vue", icon: "logos:vue" },
+  { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
+]
+},
+
+{
+  name: "herramientas",
+  tools:[
+    { name: "Git", icon: "devicon:git" },
+    { name: "VS Code", icon: "logos:visual-studio-code" },
+    { name: "Visual Studio", icon: "devicon:visualstudio" },
+    { name: "Postman", icon: "devicon:postman" },
+  ]
+},
+{
+  name: "graficas",
+  tools:[
+    { name: 'Photoshop', icon: 'logos:adobe-photoshop' },
+    { name: 'Illustrator', icon: 'logos:adobe-illustrator' },
+    { name: 'After Effects', icon: 'logos:adobe-after-effects' },
+    { name: 'Premiere', icon: 'logos:adobe-premiere' },
     { name: 'Indesign', icon: 'logos:adobe-indesign' },
     { name: 'Inkscape', icon: 'devicon:inkscape' },
     { name: 'Lightroom', icon: 'logos:adobe-lightroom' }
-]
+  ]
+}
+
+];
+
 
 export const traducciones = {
     es: {
@@ -92,23 +129,27 @@ export const traducciones = {
         projects: {
             eyebrow: 'Proyectos',
             title: 'Selección de trabajos destacados',
-            cta: 'Hablemos',
-            featured: 'Destacado',
             items: [
                 {
-                    title: 'Dashboard de métricas',
+                    title: 'Rebranding de marca',
                     description:
                         'Panel limpio para visualizar KPIs, rendimiento y actividad en tiempo real con una interfaz enfocada en legibilidad.',
+                        photo: '/images/projects/metrics-dashboard.png',
+                        tags: ['Illustrator', 'Meta Business', 'Fotografía', 'Branding'],
                 },
                 {
-                    title: 'Landing de producto',
+                    title: 'Rediseño de la Web IES Jándula',
                     description:
                         'Landing moderna con narrativa clara, secciones modulares y llamadas a la acción pensadas para conversión.',
+                    photo: '/images/projects/product-landing.png',
+                    tags: ['Figma', 'Astro', 'Tailwind CSS', 'TypeScript', "Strapi"],
                 },
                 {
                     title: 'Portfolio personal',
                     description:
                         'Base flexible para presentar proyectos, experiencia y contacto de forma ordenada y fácil de mantener.',
+                    photo: '/images/projects/personal-portfolio.png',
+                    tags: [],
                 },
             ],
         },
