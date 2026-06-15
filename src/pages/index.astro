@@ -170,7 +170,7 @@ const herramientas = [
 
   <div class="mx-auto lg:max-w-7xl grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6" id="videos">
 
-<div class="group col-span-2 lg:col-span-3 max-h-[500px] rounded-lg bg-black shadow-md overflow-hidden">
+<div class="group col-span-2 lg:col-span-3 max-h-125 rounded-lg bg-black shadow-md overflow-hidden">
     <video 
         muted 
         loop 
@@ -276,7 +276,7 @@ const herramientas = [
             
           {formacion.map((edu) => (
             <div class="relative">
-                <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-(--color-accent)"></div>
+                <div class="absolute -left-5.25 top-1.5 w-2.5 h-2.5 rounded-full bg-(--color-accent)"></div>
                 <span class="text-sm text-gray-500 font-medium">{edu.periodo}</span>
                 <h4 class="font-bold text-lg text-gray-800">{edu.titulo}</h4>
                 <p class="text-gray-600 text-sm">{edu.instituto}</p>
@@ -397,7 +397,7 @@ const herramientas = [
   </div>
 </section>
 
-<!-- <section class="mx-auto w-full max-w-7xl px-6 pb-10 sm:px-8 lg:px-10" id="proyectos">
+ <section class="mx-auto w-full max-w-7xl px-6 pb-10 sm:px-8 lg:px-10" id="proyectos">
 			<div class="mb-6 flex items-end justify-between gap-4">
 				<div>
 					<p class="text-sm font-semibold uppercase tracking-[0.35em] text-[--color-hover]" data-i18n="projects.eyebrow">{copy.projects.eyebrow}</p>
@@ -423,10 +423,10 @@ const herramientas = [
 					</article>
 				))}
 			</div>
-		</section> -->
+		</section> 
 
 <div
-  class="bg-(--color-accent) h-[400px] w-full"
+  class="bg-(--color-accent) h-100 w-full"
 >
 </div>
 
@@ -436,7 +436,7 @@ const herramientas = [
 >
   <CursorFollower />
   <section
-    class="flex justify-center align-middle mx-auto max-w-7xl px-3 pb-6 sm:px-3 sm:pb-10 lg:px-19"
+    class="flex flex-col justify-center align-middle mx-auto max-w-7xl px-3 pb-6 sm:px-3 sm:pb-10 lg:px-19"
     id="contacto"
   >
     <div
@@ -489,11 +489,39 @@ const herramientas = [
           }
         </div>
 
-<!--Descargar CV -->
-
-
       </div>
+
+      <!--Descargar CV -->
+
     </div>
+
+
+<div class="flex flex-col items-center justify-center mt-10">
+  
+  <a
+  href="/documents/CV-egumo-2026.pdf"
+  download="CV-egumo-2026.pdf"
+    class="group mt-6 flex items-center justify-center w-max gap-8 rounded-full border border-white/10 bg-white/5 px-5 py-4 text-sm text-(--color-accent) no-underline transition duration-300 hover:-translate-y-0.5 hover:border-none hover:bg-(--color-accent) hover:shadow-[0_18px_36px_rgba(245,202,11,0.12)] hover:animate-pulse"
+  >
+
+
+    <div class="w-full justify-center items-center text-center">
+      <p class="text-xs uppercase tracking-[0.32em] text-white/45 group-hover:text-black/92">
+        Descargar CV
+      </p>
+
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-(--color-accent) group-hover:fill-black">
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z" />
+    </svg>
+
+
+
+  </a>
+</div>
+
   </section>
 </div>
   </main>
