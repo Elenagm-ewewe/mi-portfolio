@@ -1,7 +1,4 @@
 
-import { Icon } from 'astro-icon/components';
-
-
 export const contacto = [
     {
         name: 'Email',
@@ -21,64 +18,6 @@ export const contacto = [
         link: 'https://github.com/Elenagm-ewewe',
         icon: 'mdi:github',
     },
-];
-
-export const formacion = [
-    { titulo: 'Grado en Comunicación Audiovisual',
-        instituto: 'Universidad de Málaga',
-        periodo: '2016 - 2021' },
-    { titulo: 'Técnico superior en Desarrollo de Aplicaciones Web',
-        instituto: 'IES Jándula',
-        periodo: '2024 - 2026' },
-    { titulo: 'Curso de Especialización en Soporte IT y Ciberseguridad 24X7',
-        instituto: 'Escuela de Organización Industrial',
-        periodo: '2026' }
-]
-
-export const alltools = [
-{name: "backend",
-tools:[
-  { name: "Spring Boot", icon: "devicon:spring" },
-  { name: ".NET", icon: "logos:dotnet" },
-  { name: "MySQL", icon: "devicon:mysql" },
-  { name: "SQL Server", icon: "devicon:microsoftsqlserver" },
-  { name: "MongoDB", icon: "devicon:mongodb" },
-  { name: "Strapi", icon: "logos:strapi-icon" },
-]
-},
-
-{name: "frontend",
-tools:[
-  { name: "Figma", icon: "devicon:figma" },
-  { name: "Angular", icon: "devicon:angular" },
-  { name: "Astro", icon: "devicon:astro" },
-  { name: "Vue", icon: "logos:vue" },
-  { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
-]
-},
-
-{
-  name: "herramientas",
-  tools:[
-    { name: "Git", icon: "devicon:git" },
-    { name: "VS Code", icon: "logos:visual-studio-code" },
-    { name: "Visual Studio", icon: "devicon:visualstudio" },
-    { name: "Postman", icon: "devicon:postman" },
-  ]
-},
-{
-  name: "graficas",
-  tools:[
-    { name: 'Photoshop', icon: 'logos:adobe-photoshop' },
-    { name: 'Illustrator', icon: 'logos:adobe-illustrator' },
-    { name: 'After Effects', icon: 'logos:adobe-after-effects' },
-    { name: 'Premiere', icon: 'logos:adobe-premiere' },
-    { name: 'Indesign', icon: 'logos:adobe-indesign' },
-    { name: 'Inkscape', icon: 'devicon:inkscape' },
-    { name: 'Lightroom', icon: 'logos:adobe-lightroom' }
-  ]
-}
-
 ];
 
 
@@ -102,11 +41,9 @@ export const traducciones = {
             primary: 'Ver proyectos',
             secondary: 'Contactar',
         },
-        stats: [
-            { value: '4+', label: 'años construyendo interfaces limpias' },
-            { value: '12', label: 'proyectos entregados con foco visual' },
-            { value: '100%', label: 'estructura preparada para escalar' },
-        ],
+        sentences: {
+            videos: "Grabación y edición de contenido multimedia para diferentes fines"
+        },
         summary: {
             eyebrow: 'Resumen',
             title: 'Interfaces con orden visual y foco en el contenido.',
@@ -116,15 +53,15 @@ export const traducciones = {
                 'Abierto a portfolios, landing pages y productos simples con buena presentación.',
         },
         about: {
-            description:"Desarrolladora frontend junior y técnica audiovisual con experiencia en Angular, Vue, Astro, .NET y edición multimedia profesional. Especializada en crear soluciones digitales y contenido visual combinando desarrollo web, diseño gráfico y producción audiovisual. ",
+            description: "Desarrolladora frontend junior y técnica audiovisual con experiencia en Angular, Vue, Astro, .NET y edición multimedia profesional. Especializada en crear soluciones digitales y contenido visual combinando desarrollo web, diseño gráfico y producción audiovisual. ",
             eyebrow: 'Sobre mí',
             title: 'Un poco sobre mi experiencia y enfoque',
-            cta: 'Hablemos',
-            paragraphs: [
-                'Soy un desarrollador front-end con más de 4 años de experiencia creando interfaces limpias y funcionales. Me especializo en construir portfolios, landing pages y productos digitales que destacan por su estética clara, orden visual y foco en el contenido.',
-                'Mi enfoque se basa en la simplicidad, la consistencia y la usabilidad. Creo que una buena interfaz debe ser fácil de entender, agradable a la vista y orientada a la conversión. Me gusta trabajar con tecnologías modernas como Astro, Tailwind CSS y TypeScript para crear experiencias rápidas, accesibles y fáciles de mantener.',
-            ],
+            philosophy: {
+                title: 'Filosofía de trabajo',
+                description1: "Me apasiona el punto donde se cruzan el código limpio y la narrativa visual. No solo desarrollo la lógica de una aplicación, sino que entiendo cómo debe comportarse el color, el ritmo y el movimiento en la pantalla. ",
+                description2: "Mi objetivo es crear experiencias web que no solo funcionen a la perfección con tecnologías como Angular, Vue o Astro, sino que además tengan un impacto visual profesional y cinematográfico."
 
+            }
         },
         projects: {
             eyebrow: 'Proyectos',
@@ -134,8 +71,8 @@ export const traducciones = {
                     title: 'Rebranding de marca',
                     description:
                         'Modernización de la identidad visual de la marca Andupan, incluyendo logotipo, paleta de colores y elementos gráficos para mejorar su presencia en línea y en medios impresos.',
-                        photo: '/images/andupan.jpg',
-                        tags: ['Illustrator', 'Meta Business', 'Fotografía', 'Branding'],
+                    photo: '/images/andupan.jpg',
+                    tags: ['Illustrator', 'Meta Business', 'Fotografía', 'Branding'],
                 },
                 {
                     title: 'Rediseño de la Web IES Jándula',
@@ -148,7 +85,76 @@ export const traducciones = {
         },
         contact: {
             eyebrow: 'Contacto',
+            downloadcv: "Descargar CV"
         },
+        formacion: {
+            title: "Formación",
+            titles: [
+                {
+                    titulo: 'Grado en Comunicación Audiovisual',
+                    instituto: 'Universidad de Málaga',
+                    periodo: '2016 - 2021'
+                },
+                {
+                    titulo: 'Técnico superior en Desarrollo de Aplicaciones Web',
+                    instituto: 'IES Jándula',
+                    periodo: '2024 - 2026'
+                },
+                {
+                    titulo: 'Curso de Especialización en Soporte IT y Ciberseguridad 24X7',
+                    instituto: 'Escuela de Organización Industrial',
+                    periodo: '2026'
+                }
+            ],
+
+        },
+        alltools: [
+            {
+                name: "backend",
+                tools: [
+                    { name: "Spring Boot", icon: "devicon:spring" },
+                    { name: ".NET", icon: "logos:dotnet" },
+                    { name: "MySQL", icon: "devicon:mysql" },
+                    { name: "SQL Server", icon: "devicon:microsoftsqlserver" },
+                    { name: "MongoDB", icon: "devicon:mongodb" },
+                    { name: "Strapi", icon: "logos:strapi-icon" },
+                ]
+            },
+
+            {
+                name: "frontend",
+                tools: [
+                    { name: "Figma", icon: "devicon:figma" },
+                    { name: "Angular", icon: "devicon:angular" },
+                    { name: "Astro", icon: "devicon:astro" },
+                    { name: "Vue", icon: "logos:vue" },
+                    { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
+                ]
+            },
+
+            {
+                name: "herramientas",
+                tools: [
+                    { name: "Git", icon: "devicon:git" },
+                    { name: "VS Code", icon: "logos:visual-studio-code" },
+                    { name: "Visual Studio", icon: "devicon:visualstudio" },
+                    { name: "Postman", icon: "devicon:postman" },
+                ]
+            },
+            {
+                name: "graficas",
+                tools: [
+                    { name: 'Photoshop', icon: 'logos:adobe-photoshop' },
+                    { name: 'Illustrator', icon: 'logos:adobe-illustrator' },
+                    { name: 'After Effects', icon: 'logos:adobe-after-effects' },
+                    { name: 'Premiere', icon: 'logos:adobe-premiere' },
+                    { name: 'Indesign', icon: 'logos:adobe-indesign' },
+                    { name: 'Inkscape', icon: 'devicon:inkscape' },
+                    { name: 'Lightroom', icon: 'logos:adobe-lightroom' }
+                ]
+            }
+
+        ]
     },
     en: {
         nav: {
@@ -162,17 +168,15 @@ export const traducciones = {
         },
         hero: {
             eyebrow: 'Front-end developer',
-            title: 'I build portfolios and products with a clear, elegant, and direct look.',
+            title: '',
             description:
-                'This index is designed to present projects, capabilities, and contact information with a sober, modern, and easy-to-maintain visual structure.',
+                'Specializing in creating digital solutions and visual content by combining web development, graphic design, and audiovisual production.',
             primary: 'View projects',
             secondary: 'Contact me',
         },
-        stats: [
-            { value: '4+', label: 'years building clean interfaces' },
-            { value: '12', label: 'projects delivered with visual focus' },
-            { value: '100%', label: 'structure ready to scale' },
-        ],
+        sentences: {
+            videos: "Recording and editing multimedia content for different purposes"
+        },
         summary: {
             eyebrow: 'Summary',
             title: 'Interfaces with visual order and focus on content.',
@@ -184,45 +188,109 @@ export const traducciones = {
         about: {
             eyebrow: 'About me',
             title: 'A bit about my experience and approach',
-            cta: 'Let\'s talk',
-            paragraphs: [
-                'I am a front-end developer with more than 4 years of experience building clean and functional interfaces. I specialize in creating portfolios, landing pages, and digital products that stand out for their clear aesthetics, visual order, and focus on content.',
-                'My approach is based on simplicity, consistency, and usability. I believe a good interface should be easy to understand, pleasant to look at, and oriented toward conversion. I like working with modern technologies such as Astro, Tailwind CSS, and TypeScript to create fast, accessible, and maintainable experiences.',
-            ],
-            servicesTitle: 'Services I offer:',
-            services: [
-                'Simple and consistent interface design',
-                'Reusable and maintainable components',
-                'Responsive experiences with good visual rhythm',
-                'Fast, clear pages focused on conversion',
-            ],
+            description: "Junior frontend developer and audiovisual technician with experience in Angular, Vue, Astro, .NET, and professional multimedia editing. Specialized in creating digital solutions and visual content by combining web development, graphic design, and audiovisual production.",
+            philosophy: {
+                title: 'Work philosophy',
+                description1: "I'm passionate about the intersection of clean code and visual storytelling. I don't just develop application logic; I understand how color, rhythm, and movement should behave on screen.",
+                description2: "My goal is to create web experiences that not only work seamlessly with technologies like Angular, Vue, and Astro, but also have a professional, cinematic visual impact."
+
+            }
+
         },
         projects: {
             eyebrow: 'Projects',
             title: 'Selected featured work',
-            cta: 'Let\'s talk',
             featured: 'Featured',
             items: [
                 {
-                    title: 'Metrics dashboard',
+                    title: 'Rebranding of the Andupan brand',
                     description:
-                        'A clean dashboard to visualize KPIs, performance, and real-time activity with an interface focused on readability.',
-                },
+                        "Modernization of the Andupan brand's visual identity, including logo, color palette, and graphic elements to improve its online and print media presence.",
+                    photo: '/images/andupan.jpg',
+                    tags: ['Illustrator', 'Meta Business', 'Photography', 'Branding'],
+                    },
                 {
-                    title: 'Product landing page',
+                    title: 'Redesign of the IES Jándula Website',
                     description:
-                        'A modern landing page with a clear narrative, modular sections, and conversion-oriented calls to action.',
-                },
-                {
-                    title: 'Personal portfolio',
-                    description:
-                        'A flexible base to present projects, experience, and contact information in an organized and easy-to-maintain way.',
-                },
+                        'A modern landing page Complete renovation of the IES Jándula website, with the aim of making it more accessible, functional and easier to maintain for future updates a clear narrative, modular sections, and conversion-oriented calls to action.',
+                    photo: '/images/landing-page.jpg',
+                    tags: ['HTML', 'CSS', 'JavaScript'],
+                }
             ],
         },
         contact: {
             eyebrow: 'Contact',
+            downloadcv: "Download CV"
         },
+
+        formacion: {
+            title: "Education",
+            titles: [
+                {
+                    titulo: "Bachelor's Degree in Audiovisual Communication",
+                    instituto: 'University de Málaga',
+                    periodo: '2016 - 2021'
+                },
+                {
+                    titulo: "Advanced Technician in Web Application Development",
+                    instituto: 'IES Jándula',
+                    periodo: '2024 - 2026'
+                },
+                {
+                    titulo: 'Specialization Course in 24/7 IT Support and Cybersecurity',
+                    instituto: 'Escuela de Organización Industrial',
+                    periodo: '2026'
+                }
+            ],
+
+        },
+        alltools: [
+            {
+                name: "backend",
+                tools: [
+                    { name: "Spring Boot", icon: "devicon:spring" },
+                    { name: ".NET", icon: "logos:dotnet" },
+                    { name: "MySQL", icon: "devicon:mysql" },
+                    { name: "SQL Server", icon: "devicon:microsoftsqlserver" },
+                    { name: "MongoDB", icon: "devicon:mongodb" },
+                    { name: "Strapi", icon: "logos:strapi-icon" },
+                ]
+            },
+
+            {
+                name: "frontend",
+                tools: [
+                    { name: "Figma", icon: "devicon:figma" },
+                    { name: "Angular", icon: "devicon:angular" },
+                    { name: "Astro", icon: "devicon:astro" },
+                    { name: "Vue", icon: "logos:vue" },
+                    { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
+                ]
+            },
+
+            {
+                name: "tools",
+                tools: [
+                    { name: "Git", icon: "devicon:git" },
+                    { name: "VS Code", icon: "logos:visual-studio-code" },
+                    { name: "Visual Studio", icon: "devicon:visualstudio" },
+                    { name: "Postman", icon: "devicon:postman" },
+                ]
+            },
+            {
+                name: "graphics",
+                tools: [
+                    { name: 'Photoshop', icon: 'logos:adobe-photoshop' },
+                    { name: 'Illustrator', icon: 'logos:adobe-illustrator' },
+                    { name: 'After Effects', icon: 'logos:adobe-after-effects' },
+                    { name: 'Premiere', icon: 'logos:adobe-premiere' },
+                    { name: 'Indesign', icon: 'logos:adobe-indesign' },
+                    { name: 'Inkscape', icon: 'devicon:inkscape' },
+                    { name: 'Lightroom', icon: 'logos:adobe-lightroom' }
+                ]
+            }
+
+        ]
     },
 } as const;
 

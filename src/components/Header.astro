@@ -60,7 +60,7 @@ const secciones = [
   
       <button
         type="button"
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-(--color-semiblack)/10 bg-white/70 text-sm font-medium uppercase tracking-[0.12em] text-(--color-semiblack) transition hover:border-(--color-accent) hover:text-(--color-accent)"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-(--color-semiblack)/10 bg-white/70 text-sm font-medium uppercase tracking-[0.12em] text-(--color-semiblack) transition hover:border-(--color-accent) hover:text-(--color-accent) active:border-(--color-accent) active:text-(--color-accent) "
         aria-label={copy.toggle.label}
         data-lang-toggle
       >
@@ -100,22 +100,16 @@ const secciones = [
 
   const applyLanguage = (language) => {
     const source = translations[language];
+    if (!source) return;
 
     textNodes.forEach((node) => {
       const key = node.getAttribute('data-i18n');
-
-      if (!key || !source) {
-        return;
-      }
-
       const value = getValue(source, key);
-
-      if (typeof value === 'string') {
-        node.textContent = value;
-      }
+      if (typeof value === 'string') node.textContent = value;
     });
 
     document.documentElement.lang = language;
+    document.documentElement.setAttribute('data-lang', language);
 
     if (toggleButton && toggleText && source?.toggle) {
       toggleButton.setAttribute('aria-label', source.toggle.label);
@@ -123,6 +117,7 @@ const secciones = [
     }
 
     localStorage.setItem(storageKey, language);
+    window.dispatchEvent(new CustomEvent('languageChange', { detail: language }));
   };
 
   const savedLanguage = localStorage.getItem(storageKey);
