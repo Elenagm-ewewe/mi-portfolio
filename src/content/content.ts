@@ -133,8 +133,8 @@ export const traducciones = {
                 {
                     title: 'Rebranding de marca',
                     description:
-                        'Panel limpio para visualizar KPIs, rendimiento y actividad en tiempo real con una interfaz enfocada en legibilidad.',
-                        photo: '/images/projects/metrics-dashboard.png',
+                        'Modernización de la identidad visual de la marca Andupan, incluyendo logotipo, paleta de colores y elementos gráficos para mejorar su presencia en línea y en medios impresos.',
+                        photo: '/images/andupan.jpg',
                         tags: ['Illustrator', 'Meta Business', 'Fotografía', 'Branding'],
                 },
                 {
@@ -143,14 +143,7 @@ export const traducciones = {
                         'Renovación completa del sitio web del IES Jándula, con el objetivo de hacerlo más accesible, funcional y fácil de mantener ante futuras actualizaciones.',
                     photo: '/images/iesjandula.jpg',
                     tags: ['Figma', 'Astro', 'Tailwind CSS', 'TypeScript', "Strapi"],
-                },
-                {
-                    title: 'Portfolio personal',
-                    description:
-                        'Base flexible para presentar proyectos, experiencia y contacto de forma ordenada y fácil de mantener.',
-                    photo: '/images/projects/personal-portfolio.png',
-                    tags: [],
-                },
+                }
             ],
         },
         contact: {

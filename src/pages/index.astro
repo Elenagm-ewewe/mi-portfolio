@@ -221,7 +221,7 @@ const copy = traducciones.es;
     </p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 my-12 max-w-6xl mx-auto px-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 my-12 max-w-6xl">
     
     <div>
         <h3 class="text-xl font-bold uppercase tracking-wider text-(--color-accent) mb-6">Formación Académica</h3>
@@ -262,7 +262,7 @@ const copy = traducciones.es;
             {cat.name}
           </p>
           <div
-            class="grid grid-cols-3 justify-center gap-8 lg:flex flex-row flex-wrap"
+            class="grid grid-cols-3 justify-center gap-8 lg:grid-cols-4"
           >
             {
               cat.tools.map((tech) => (
@@ -287,7 +287,12 @@ const copy = traducciones.es;
   </div>
 </section>
 
- <section class="mx-auto w-full max-w-7xl px-6 pb-10 sm:px-8 lg:px-10" id="proyectos">
+<!--Proyectos -->
+
+<div class="bg-(--color-accent) h-30 w-full">
+</div>  
+
+ <section class="mx-auto mt-11 w-full max-w-7xl px-6 pb-10 sm:px-8 lg:px-10" id="proyectos">
 			<div class="mb-6 flex items-end justify-between gap-4">
 				<div>
 					<p class="text-sm font-semibold uppercase tracking-[0.35em] text-[--color-hover]" data-i18n="projects.eyebrow">{copy.projects.eyebrow}</p>
@@ -298,9 +303,9 @@ const copy = traducciones.es;
 			<div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
 				{copy.projects.items.map((project, index) => (
 					<article class="group rounded-[1.75rem] border border-white/80 bg-white/80 p-6 shadow-[0_18px_40px_rgba(32,37,48,0.08)] backdrop-blur transition hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(32,37,48,0.12)]">
-						<div class="relative flex object-cover items-center justify-between gap-3 -mx-6 -mt-6 overflow-hidden rounded-t-[1.75rem]">
+						<div class="relative flex object-cover items-center justify-between gap-3 h-45 -mx-6 -mt-6 overflow-hidden rounded-t-[1.75rem]">
               <img src={project.photo} alt={project.title} class="w-full z-0"/>
-							<p class="absolute p-2 rounded-full bg-(--color-accent) top-3 left-3 text-sm font-semibold uppercase tracking-[0.28em] text-white z-10 shadow-2xl">0{index + 1}</p>
+							<p class="absolute p-2 rounded-full bg-(--color-accent) top-3 right-3 text-sm font-semibold uppercase tracking-[0.10em] text-white z-10 shadow-2xl">0{index + 1}</p>
 						</div>
 						<h3 class="mt-5 text-2xl font-semibold text-[--color-semiblack]" data-i18n={`projects.items.${index}.title`}>{project.title}</h3>
 						<p class="mt-3 text-sm leading-7 text-[--color-semiblack]/75" data-i18n={`projects.items.${index}.description`}>{project.description}</p>
@@ -370,7 +375,7 @@ const copy = traducciones.es;
                   </p>
                 </div>
 
-                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(245,202,11,0.28)] bg-[rgba(245,202,11,0.12)] text-[--color-accent] transition group-hover:border-[rgba(245,202,11)] group-hover:bg-(--color-accent) group-hover:text-[#11151d]">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(245,202,11,0.28)] bg-[rgba(245,202,11,0.12)] text-[--color-accent] transition group-hover:border-[rgba(245,202,11)] group-hover:bg-(--color-accent) group-hover:text-[#11151d] group-active:border-[rgba(245,202,11)] group-active:bg-(--color-accent) group-active:text-[#11151d]">
                   ↗
                 </span>
               </a>
@@ -390,18 +395,18 @@ const copy = traducciones.es;
   <a
   href="/documents/CV-egumo-2026.pdf"
   download="CV-egumo-2026.pdf"
-    class="group mt-6 flex items-center justify-center w-max gap-8 rounded-full border border-white/10 bg-white/5 px-5 py-4 text-sm text-(--color-accent) no-underline transition duration-300 hover:-translate-y-0.5 hover:border-none hover:bg-(--color-accent) hover:shadow-[0_18px_36px_rgba(245,202,11,0.12)] hover:animate-pulse"
+    class="group mt-6 flex items-center justify-center w-max gap-8 rounded-full border border-white/10 bg-white/5 px-5 py-4 text-sm text-(--color-accent) no-underline transition duration-300 hover:-translate-y-0.5 hover:border-none hover:bg-(--color-accent) active:bg-(--color-accent) hover:shadow-[0_18px_36px_rgba(245,202,11,0.12)] hover:animate-pulse"
   >
 
 
     <div class="w-full justify-center items-center text-center">
-      <p class="text-xs uppercase tracking-[0.32em] text-white/45 group-hover:text-black/92">
+      <p class="text-xs uppercase tracking-[0.32em] text-white/45 group-active:text-black/92 group-hover:text-black/92">
         Descargar CV
       </p>
 
     </div>
 
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-(--color-accent) group-hover:fill-black">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-(--color-accent) group-hover:fill-black active-group-hover:fill-black transition duration-300">
       <path d="M0 0h24v24H0z" fill="none" />
       <path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z" />
     </svg>
