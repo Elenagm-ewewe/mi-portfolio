@@ -80,6 +80,13 @@ export const traducciones = {
                         'Renovación completa del sitio web del IES Jándula, con el objetivo de hacerlo más accesible, funcional y fácil de mantener ante futuras actualizaciones.',
                     photo: '/images/iesjandula.jpg',
                     tags: ['Figma', 'Astro', 'Tailwind CSS', 'TypeScript', "Strapi"],
+                },
+                {
+                    title: 'Diseño corporativo de Et-Labora',
+                    description:
+                        'Desarrollo de la identidad visual de la empresa Et-Labora, incluyendo logotipo, paleta de colores y elementos gráficos para mejorar su presencia en línea y en medios impresos.',
+                    photo: '/images/etlabora.png',
+                    tags: ['Illustrator', 'Photoshop', 'Branding', 'Fotografía'],
                 }
             ],
         },
@@ -215,6 +222,13 @@ export const traducciones = {
                         'A modern landing page Complete renovation of the IES Jándula website, with the aim of making it more accessible, functional and easier to maintain for future updates a clear narrative, modular sections, and conversion-oriented calls to action.',
                     photo: '/images/landing-page.jpg',
                     tags: ['HTML', 'CSS', 'JavaScript'],
+                },
+                {
+                    title: 'Diseño corporativo de Et-Labora',
+                    description:
+                        ' Development of the visual identity of the company Et-Labora, including logo, color palette, and graphic elements to improve its online and print media presence.',
+                    photo: '/images/etlabora.png',
+                    tags: ['Figma', 'Astro', 'Tailwind CSS', 'TypeScript', "Strapi"],
                 }
             ],
         },
