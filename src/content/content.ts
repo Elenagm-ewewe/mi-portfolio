@@ -33,7 +33,7 @@ export const traducciones = {
             short: 'EN',
         },
         hero: {
-            eyebrow: 'Front-end developer / Técnica audiovisual',
+            eyebrow: 'Full-stack developer / Creadora de contenido audiovisual',
             name: 'Elena',
             surname: 'Gutiérrez Morata',
             description:
@@ -174,7 +174,7 @@ export const traducciones = {
             short: 'ES',
         },
         hero: {
-            eyebrow: 'Front-end developer',
+            eyebrow: 'Full-stack developer / Visual content creator',
             title: '',
             description:
                 'Specializing in creating digital solutions and visual content by combining web development, graphic design, and audiovisual production.',
