@@ -146,6 +146,8 @@ export const traducciones = {
                     { name: "VS Code", icon: "logos:visual-studio-code" },
                     { name: "Visual Studio", icon: "devicon:visualstudio" },
                     { name: "Postman", icon: "devicon:postman" },
+                    { name: "Claude AI", icon: "logos:claude-icon" },
+                    { name: "Copilot", icon: "logos:github-copilot" },
                 ]
             },
             {
@@ -289,6 +291,8 @@ export const traducciones = {
                     { name: "VS Code", icon: "logos:visual-studio-code" },
                     { name: "Visual Studio", icon: "devicon:visualstudio" },
                     { name: "Postman", icon: "devicon:postman" },
+                    { name: "Claude AI", icon: "logos:claude-icon" },
+                    { name: "Copilot", icon: "logos:github-copilot" }
                 ]
             },
             {
