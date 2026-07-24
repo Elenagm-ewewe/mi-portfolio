@@ -48,9 +48,10 @@ export const traducciones = {
             eyebrow: 'Resumen',
             title: 'Interfaces con orden visual y foco en el contenido.',
             badge: 'UI',
-            contactTitle: 'Contacto rápido',
+            contactTitle: 'Contacto',
             contactDescription:
                 'Abierto a portfolios, landing pages y productos simples con buena presentación.',
+            contactLead: 'Una ruta rápida para abrir conversación, revisar perfiles o descargar mi CV sin perder contexto.',
         },
         about: {
             description: "Desarrolladora frontend junior y técnica audiovisual con experiencia en Angular, Vue, Astro, .NET y edición multimedia profesional. Especializada en crear soluciones digitales y contenido visual combinando desarrollo web, diseño gráfico y producción audiovisual. ",
@@ -91,7 +92,19 @@ export const traducciones = {
             ],
         },
         contact: {
-            eyebrow: 'Contacto',
+            contactTitle: 'Contacto',
+            formTitle: 'Envíame un mensaje',
+            formName: 'Nombre',
+            formEmail: 'Email',
+            formMessage: 'Mensaje',
+            formSubject: 'Asunto',
+            submit: 'Enviar',
+            sending: 'Enviando...',
+            success: '¡Mensaje enviado con éxito!',
+            errorGeneric: 'Hubo un error. Inténtalo de nuevo.',
+            errorMissingFields: 'Faltan campos',
+            errorMissingKey: 'Falta RESEND_API_KEY',
+            links: 'Links de contacto',
             downloadcv: "Descargar CV"
         },
         formacion: {
@@ -193,6 +206,7 @@ export const traducciones = {
             contactTitle: 'Quick contact',
             contactDescription:
                 'Open to portfolios, landing pages, and simple products with strong presentation.',
+            contactLead: 'A quick way to start a conversation, review profiles, or download my CV without losing context.',
         },
         about: {
             eyebrow: 'About me',
@@ -235,6 +249,19 @@ export const traducciones = {
             ],
         },
         contact: {
+            contactTitle: 'Contact',
+            formTitle: 'Send me a message',
+            formName: 'Name',
+            formEmail: 'Email',
+            formMessage: 'Message',
+            formSubject: 'Subject',
+            submit: 'Send',
+            sending: 'Sending...',
+            success: 'Message sent successfully!',
+            errorGeneric: 'Something went wrong. Please try again.',
+            errorMissingFields: 'Missing fields',
+            errorMissingKey: 'Missing RESEND_API_KEY',
+            links: 'Contact links',
             eyebrow: 'Contact',
             downloadcv: "Download CV"
         },

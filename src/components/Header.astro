@@ -1,6 +1,12 @@
 ---
 import { traducciones } from '../content/content.ts';
 
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
 export const copy = traducciones.es;
 const secciones = [
   { key: 'nav.about', label: copy.nav.about, href: '#about' },
@@ -11,7 +17,7 @@ const secciones = [
 
 ---
 
-<header class="header sticky top-0 left-0 z-50 w-full scroll">
+<header class:list={["header sticky top-0 left-0 z-50 w-full scroll", className]}>
   <div class=" flex items-center justify-between px-5 py-3 sm:px-8 lg:px-10 mx-auto max-w-7xl">
     <a href="#" class="group flex items-center justify-center transition" aria-label="Ir al inicio">
       <div class="icon flex h-14 w-24 items-center justify-center transition pt-2">
@@ -200,8 +206,9 @@ handleScroll(); // Por si la página carga ya con scroll
 
 .header.scrolled {
   background: var(--color-background);
-  backdrop-filter: blur(15px);
-  shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(65px);
+  opacity: 0.95;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 </style>

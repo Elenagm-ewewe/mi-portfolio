@@ -1,0 +1,190 @@
+---
+import { traducciones } from "../content/content.ts";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+const copy = traducciones.es;
+---
+
+<style>
+  input,
+  textarea {
+    border: 1px solid var(--semiblack);
+    background-color: var(--color-background);
+    color: var(--semiblack);
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 5px var(--color-accent);
+  }
+</style>
+
+<div class:list={["flex flex-col gap-4", className]} data-contact-form>
+  <h3
+    class="text-sm font-semibold uppercase tracking-[0.35em] text-(--semiblack) drop-shadow-[0_0_12px_rgba(245,202,11,0.35)]"
+    data-contact-form-title
+  >
+    {copy.contact.formTitle}
+  </h3>
+
+  <form
+    id="contact-form"
+    class="flex justify-center w-full flex-col gap-4 mb-4"
+    method="post"
+    action="/api/contacto"
+    data-contact-form-form
+  >
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <input
+        class="p-2 rounded"
+        type="text"
+        name="nombre"
+        placeholder={copy.contact.formName}
+        required
+        data-contact-form-name
+      />
+      <input
+        class="p-2 rounded"
+        type="email"
+        name="email"
+        placeholder={copy.contact.formEmail}
+        data-contact-form-email
+      />
+    </div>
+    <input
+      class="p-2 rounded"
+      type="text"
+      name="asunto"
+      placeholder={copy.contact.formSubject}
+      required
+      data-contact-form-subject
+    />
+
+    <textarea
+      class="p-2 rounded"
+      name="mensaje"
+      placeholder={copy.contact.formMessage}
+      required
+      data-contact-form-message></textarea>
+
+    <button
+      class="bg-(--color-accent) py-2 hover:bg-(--color-hover)"
+      type="submit"
+      data-contact-form-submit>{copy.contact.submit}</button
+    >
+
+    <p
+      class="text-sm text-center text-(--semiblack) w-full drop-shadow-[0_0_12px_rgba(245,202,11,0.35)]"
+      id="form-status"
+      data-contact-form-status
+    >
+      hola
+    </p>
+  </form>
+</div>
+<script define:vars={{ traducciones }}>
+  const root = document.querySelector("[data-contact-form]");
+  const form = root?.querySelector("[data-contact-form-form]");
+  const status = root?.querySelector("[data-contact-form-status]");
+  const title = root?.querySelector("[data-contact-form-title]");
+  const submitButton = root?.querySelector("[data-contact-form-submit]");
+  const nameInput = root?.querySelector("[data-contact-form-name]");
+  const emailInput = root?.querySelector("[data-contact-form-email]");
+  const subjectInput = root?.querySelector("[data-contact-form-subject]");
+  const messageInput = root?.querySelector("[data-contact-form-message]");
+
+  let currentLanguage =
+    document.documentElement.getAttribute("data-lang") ?? "es";
+  let currentState = "idle";
+
+  const renderCopy = (language) => {
+    const source = traducciones[language] ?? traducciones.es;
+    currentLanguage = traducciones[language] ? language : "es";
+
+    if (title) title.textContent = source.contact.formTitle;
+    if (submitButton) submitButton.textContent = source.contact.submit;
+    if (nameInput)
+      nameInput.setAttribute("placeholder", source.contact.formName);
+    if (emailInput)
+      emailInput.setAttribute("placeholder", source.contact.formEmail);
+    if (subjectInput)
+      subjectInput.setAttribute("placeholder", source.contact.formSubject);
+    if (messageInput)
+      messageInput.setAttribute("placeholder", source.contact.formMessage);
+
+    if (status) {
+      if (currentState === "sending") {
+        status.textContent = source.contact.sending;
+      } else if (currentState === "success") {
+        status.textContent = source.contact.success;
+      } else if (currentState === "error") {
+        status.textContent =
+          status.dataset.errorMessage ?? source.contact.errorGeneric;
+      } else {
+        status.textContent = "";
+      }
+    }
+  };
+
+  const setStatus = (state, message) => {
+    currentState = state;
+
+    if (!status) return;
+
+    status.dataset.errorMessage = message ?? "";
+    const source = traducciones[currentLanguage] ?? traducciones.es;
+
+    if (state === "sending") {
+      status.textContent = source.contact.sending;
+    } else if (state === "success") {
+      status.textContent = source.contact.success;
+    } else if (state === "error") {
+      status.textContent = message ?? source.contact.errorGeneric;
+    } else {
+      status.textContent = "";
+    }
+  };
+
+  renderCopy(currentLanguage);
+
+  window.addEventListener("languageChange", (event) => {
+    renderCopy(
+      event.detail ??
+        document.documentElement.getAttribute("data-lang") ??
+        "es",
+    );
+  });
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    const formData = new FormData(form);
+    const res = await fetch("/api/contacto", {
+      method: "POST",
+      body: formData,
+    });
+    const payload = await res.json().catch(() => null);
+    const source = traducciones[currentLanguage] ?? traducciones.es;
+    const errorMessage =
+      payload?.error === "Faltan campos"
+        ? source.contact.errorMissingFields
+        : payload?.error === "Falta RESEND_API_KEY"
+          ? source.contact.errorMissingKey
+          : (payload?.error ?? source.contact.errorGeneric);
+
+    if (res.ok && payload?.success) {
+      setStatus("success");
+      form.reset();
+    } else {
+      setStatus("error", errorMessage);
+    }
+  });
+</script>
