@@ -6,7 +6,9 @@ export const prerender = false;
 const resendApiKey = import.meta.env.RESEND_API_KEY as string | undefined;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 const toEmail = (import.meta.env.RESEND_TO_EMAIL as string | undefined)?.trim() || 'elenapapoula98@gmail.com';
-const fromEmail = (import.meta.env.RESEND_FROM_EMAIL as string | undefined)?.trim() || 'Contacto web <onboarding@resend.dev>';
+// Usa "Acme" u solo la dirección de correo
+const fromEmail = (import.meta.env.RESEND_FROM_EMAIL as string | undefined)?.trim() || 'onboarding@resend.dev';
+
 
 export const GET: APIRoute = () => {
   return new Response(JSON.stringify({ ok: true, message: 'Endpoint de contacto listo' }), {
@@ -16,6 +18,7 @@ export const GET: APIRoute = () => {
 };
 
 export const POST: APIRoute = async ({ request }) => {
+
   const contentType = request.headers.get('content-type') ?? '';
   let data: FormData | URLSearchParams | null = null;
 
@@ -26,6 +29,8 @@ export const POST: APIRoute = async ({ request }) => {
     } else {
       data = await request.formData();
     }
+
+    
   } catch {
     try {
       const text = await request.text();
@@ -45,9 +50,10 @@ export const POST: APIRoute = async ({ request }) => {
 
   const nombre = getValue('nombre');
   const email = getValue('email');
+  const asunto = getValue('asunto');
   const mensaje = getValue('mensaje');
 
-  if (!nombre || !email || !mensaje) {
+  if (!nombre || !email || !asunto || !mensaje) {
     return new Response(JSON.stringify({ success: false, error: 'Faltan campos' }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
@@ -61,24 +67,32 @@ export const POST: APIRoute = async ({ request }) => {
     });
   }
 
-  try {
-    const result = await resend.emails.send({
-      from: fromEmail,
-      to: toEmail,
-      subject: `Nuevo mensaje de ${nombre}`,
-      replyTo: email,
-      text: `De: ${nombre} (${email})\n\n${mensaje}`,
-    });
+try {
+  const result = await resend.emails.send({
+    from: fromEmail,
+    to: toEmail,
+    subject: `Porfolio - ${asunto}`,
+    replyTo: email,
+    text: `De: ${nombre} (${email})\n\n${mensaje}`,
+  });
 
-    return new Response(JSON.stringify({ success: true, id: result.data?.id ?? null }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  } catch (error) {
-    console.error('Error al enviar correo con Resend:', error);
-    return new Response(JSON.stringify({ success: false, error: 'No se pudo enviar el mensaje' }), {
+  if (result.error) {
+    console.error('Error de Resend:', result.error);
+    return new Response(JSON.stringify({ success: false, error: result.error.message }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
   }
+
+  return new Response(JSON.stringify({ success: true, id: result.data?.id ?? null }), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' },
+  });
+} catch (error) {
+  console.error('Error al enviar correo con Resend:', error);
+  return new Response(JSON.stringify({ success: false, error: 'No se pudo enviar el mensaje' }), {
+    status: 500,
+    headers: { 'Content-Type': 'application/json' },
+  });
+}
 };
