@@ -16,7 +16,6 @@ import '@fontsource-variable/outfit/wght.css';
     <title>Elena Gutiérrez - Portfolio</title>
 
 
-    <!-- 🔑 Esto se ejecuta ANTES de que el navegador pinte la página -->
     <script is:inline>
       const saved = localStorage.getItem('portfolio-language');
       const preferred = navigator.language?.toLowerCase().startsWith('en') ? 'en' : 'es';
@@ -26,8 +25,8 @@ import '@fontsource-variable/outfit/wght.css';
     </script>
 
   </head>
-  <body>
-    <Header class="absolute top-0"/>
+  <body class="">
+    <Header class=""/>
     
     <main>
       <slot />
