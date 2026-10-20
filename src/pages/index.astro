@@ -4,48 +4,17 @@ import { contacto, traducciones} from "../content/content.ts";
 import { Icon } from "astro-icon/components";
 import CursorFollower from "../components/CursorFollower.astro";
 import ContactoForm from "../components/ContactoForm.astro";
+import Teuves from "../components/Teuves.astro";
 
 const copy = traducciones.es;
-
 
 ---
 
 <Layout>
-
 <style>
-
-.cara{
-	  animation: float 10s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% {
-	transform: translateY(0);
+  .cara{
+      animation: float 10s ease-in-out infinite;
   }
-  25% {
-	transform: translateY(-10px);
-  transform: translateX(-5px);
-  rotate: 2deg;
-  }
-
-  50% {
-	transform: translateY(0);
-	transform: translateX(10px);
-  }
-  75% {
-	transform: translateY(10px);
-	transform: translateX(5px);
-  rotate: -2deg;
-  }
-
-  100% {
-	transform: translateY(0);
-  }
-}
-
-
-
-
 </style>
 
   <main class="relative bg-(--color-background) w-screen overflow-hidden -top-20 left-0 z-0">
@@ -121,9 +90,14 @@ const copy = traducciones.es;
     </section>
 
 
+    <div class="w-full p-6 pt-15 mx-auto px-6 pb-10 sm:px-8 lg:px-10 lg:max-w-7xl">
+      <Teuves />
+      </div>
+
+
 
 	<!--Videos -->
-<section class=" bg-linear-to-b from-(--color-semiblack) to-black px-4 lg:pt-60 pt-20 pb-12 ">
+<!-- <section class=" bg-linear-to-b from-(--color-semiblack) to-black px-4 lg:pt-60 pt-20 pb-12 ">
 
   <div class="mx-auto lg:w-full grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6" id="videos">
 
@@ -193,7 +167,7 @@ data-i18n="sentences.videos">
           {copy.sentences.videos}
         </p>
 
-</section>
+</section> -->
 
 <!--SOBRE MI -->
 
@@ -269,11 +243,12 @@ data-i18n="sentences.videos">
 
 </div>
 
-  <div class="flex flex-col gap-15">
+  <div class="grid grid-cols-2 gap-15 items-start">
+
 
       {copy.alltools.map((cat, index) => (
-        <div class="mt-6 flex flex-col gap-4 w-full justify-center items-center">
-          <p class="text-lg font-semibold text-[--color-semiblack] uppercase"
+        <div data-aos="zoom-in" data-aos-delay="400" data-aos-duration="600" class="mt-6 justify-center flex flex-col w-full justify-center">
+          <p class="text-lg font-semibold text-[--color-semiblack] uppercase text-center"
             data-i18n={`alltools.${index}.name`}>
             {cat.name}
           </p>

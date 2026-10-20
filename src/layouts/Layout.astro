@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import 'aos/dist/aos.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '@fontsource/poiret-one';
@@ -35,6 +36,12 @@ import '@fontsource-variable/outfit/wght.css';
     <Footer />
   </body>
 </html>
+
+<script>
+  import AOS from 'aos';
+
+  AOS.init();
+</script>
 
 <style>
   html,
