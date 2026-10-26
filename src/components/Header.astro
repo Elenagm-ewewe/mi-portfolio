@@ -66,7 +66,7 @@ const secciones = [
   
       <button
         type="button"
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-(--color-semiblack)/10 bg-white text-sm font-medium uppercase tracking-[0.12em] text-(--color-semiblack) transition hover:border-(--color-accent) hover:text-(--color-accent) active:border-(--color-accent) active:text-(--color-accent) "
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full  bg-white text-sm font-medium uppercase tracking-[0.12em] text-(--color-semiblack) transition hover:bg-(--color-accent) hover:border-(--color-accent) hover:text-white active:border-(--color-accent) active:text-(--color-accent) "
         aria-label={copy.toggle.label}
         data-lang-toggle
       >
@@ -199,15 +199,16 @@ handleScroll(); // Por si la página carga ya con scroll
 .header {
   position: sticky;
   top: 0;
+
   background: transparent;
-  transition: background 0.3s, box-shadow 0.3s;
+  transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
   z-index: 100;
 }
 
 .header.scrolled {
-  background: var(--color-background);
-  backdrop-filter: blur(65px);
-  opacity: 0.95;
+  background: rgba(241, 241, 241, 0.62);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
